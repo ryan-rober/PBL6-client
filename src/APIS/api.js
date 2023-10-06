@@ -4,7 +4,7 @@
 import axios from 'axios';
 import JSONBig from 'json-bigint';
 import { isEmpty, assign } from 'lodash';
-import { STORAGE, getLocalStorage } from '@utils';
+import { STORAGE, getLocalStorage } from '../Utils';
 
 const singletonEnforcer = Symbol();
 const BASE_URL = '';
