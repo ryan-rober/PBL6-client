@@ -2,3 +2,5 @@
 
 Singup component firebase
 Config
+
+Types - form
