@@ -1,6 +1,6 @@
 import './style.css';
 import Slider from 'react-slick';
-import SlickButtonNav from './CustormNavArrow/SlickButtonNav';
+import SlickButtonNav from './CustomNavArrow/SlickButtonNav';
 
 const SwipeSliders = (props) => {
   const settings = {

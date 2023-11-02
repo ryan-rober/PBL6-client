@@ -62,5 +62,5 @@ export {
 
 export {
   formatCurrency
-} from './formatCurency'
+} from './formatCurrency'
 
