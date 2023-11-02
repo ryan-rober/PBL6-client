@@ -5,7 +5,7 @@ import { login } from '@apis'
 import { LOAD_PROFILE, LOGIN } from './constants'
 import { getLocalStorage, setLocalStorage, STORAGE } from '@utils'
 // eslint-disable-next-line no-unused-vars
-import { Action } from '@type/Store'
+// import { Action } from '@type/Store'
 
 export function* loginSaga({ payload }) {
   

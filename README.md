@@ -1,6 +1,8 @@
 # PBL6 client
 
 Singup component firebase
-Config
+Config - firebase
 
 Types - form
+
+*Conflict: react-native

@@ -1,8 +1,8 @@
 import { createReducer, updateObject, REQUEST, SUCCESS, FAILURE } from '@stores'
 // eslint-disable-next-line no-unused-vars
-import { Action } from '@type/Store'
+// import { Action } from '@type/Store'
 // eslint-disable-next-line no-unused-vars
-import { AuthState } from '@type/Store/auth'
+// import { AuthState } from '@type/Store/auth'
 import { LOAD_PROFILE, LOGIN } from './constants'
 
 export const initialState = {

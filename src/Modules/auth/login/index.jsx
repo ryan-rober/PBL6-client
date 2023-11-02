@@ -13,11 +13,11 @@ import { useAuth } from '@hooks';
 import { Wrapper, Right } from '@themes/facit';
 import LoginScheme from './scheme';
 import { Row } from './styled';
-import LoginForm from '@type/Form/LoginForm';
+// import LoginForm from '@type/Form/LoginForm';
 
 const CreateCourseScreen = () => {
   const { t } = useTranslation(['common']);
-  const form = useForm<LoginForm>({
+  const form = useForm({
     resolver: yupResolver(LoginScheme(t)),
   });
   const { handleSubmit } = form;

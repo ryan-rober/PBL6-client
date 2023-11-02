@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import styled from 'styled-components'
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals'
 import configureStore from './Stores/configureStore'
 import { history } from './Stores/reducers'
 import ThemeProvider, { ThemedGlobalStyle } from './Themes'
-import './types.d.ts'
+// import './types.d.ts'
 import '@config/firebase'
 
 const NODE_ENV = import.meta.env.NODE_ENV
@@ -25,7 +25,7 @@ const VerticalBox = styled.div`
 
 const initialState = {}
 const store = configureStore(initialState, history)
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   NODE_ENV !== 'production'
     ? (
       <React.StrictMode>

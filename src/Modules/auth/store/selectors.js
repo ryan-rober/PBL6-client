@@ -6,8 +6,8 @@
  * The global state selectors
  */
 
-import { Store } from '@type/Store'
-import { AuthState } from '@type/Store/auth'
+// import { Store } from '@type/Store'
+// import { AuthState } from '@type/Store/auth'
 import { createSelector } from 'reselect'
 import { initialState } from './reducer'
 
