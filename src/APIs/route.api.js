@@ -5,10 +5,13 @@ import { setLocalStorage } from '../Utils';
 //@js-ignore
 import { Linking } from 'react-native';
 
+const HOST = import.meta.env.HOST
+const PORT = import.meta.env.PORT
+
 const getListLocation = (setListLocation) => {
   axios({
     method: 'GET',
-    url: 'http://35.240.208.147:6789/api/station',
+    url: `http://${HOST}:${PORT}/api/station`,
   })
     .then((res) => {
       const listResponse = res.data;
@@ -27,7 +30,7 @@ const getListLocation = (setListLocation) => {
 const findTrips = (Data, setData) => {
   axios({
     method: 'POST',
-    url: 'http://35.240.208.147:6789/api/trip/find-trip',
+    url: `http://${HOST}:${PORT}/api/trip/find-trip`,
     data: Data,
   })
     .then((res) => {

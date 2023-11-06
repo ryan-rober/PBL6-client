@@ -3,6 +3,9 @@ import END_POINT from './constants';
 import axios from 'axios';
 import { setLocalStorage, STORAGE } from '../Utils';
 
+const HOST = import.meta.env.HOST
+const PORT = import.meta.env.PORT
+
 const login = async (Data) => {
   try {
     const res = await AxiosClient.post(END_POINT.LOGIN, Data);
@@ -22,7 +25,7 @@ const login = async (Data) => {
 
 const register = async (Data) => {
   try {
-    const res = await axios.post("http://35.240.208.147:6789/api/auth/signup", Data);
+    const res = await axios.post(`http://${HOST}:${PORT}/api/auth/signup`, Data);
     const data = res.data;
 
     if (data.message) {
