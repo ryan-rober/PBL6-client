@@ -3,7 +3,7 @@ import AxiosClient from './api';
 import END_POINT from './constants';
 import { setLocalStorage } from '../Utils';
 //@js-ignore
-import { Linking } from 'react-native';
+// import { Linking } from 'react-native';
 
 const HOST = import.meta.env.HOST
 const PORT = import.meta.env.PORT
@@ -65,7 +65,7 @@ const ApiBookingPartSeat = (Data, setData) => {
 const ApiPayment = (Data) => {
   return AxiosClient.post(END_POINT.PAYMENT, Data)
     .then((res) => {
-      Linking.openURL(res.data.url);
+      // Linking.openURL(res.data.url);
       setLocalStorage('count', true);
       window.location.replace('./profile');
     })
