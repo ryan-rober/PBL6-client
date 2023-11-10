@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Inter', sans-serif
+}
+html{
+    scroll-behavior: smooth;
+	scrollbar-color: #6969dd #e0e0e0;
+	scrollbar-width: thin;
+
+}
+body{
+    margin: 0;
+    height: 200vh;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	background-color: rgb(221, 218, 218);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+  }
+  .seat-picker__row {
+	margin-bottom: 20px !important;
+  }
+  .seat--reserved,.seat--enabled,.seat-picker__row__number{
+	margin-right: 20px !important;
+  }
+  .seat-picker__row--selected{
+     margin-left: -17px;
+  }
+
+  .css-1hb7zxy-IndicatorsContainer{
+    display: none !important;
+  }
+  .css-yk16xz-control{
+    border: none !important;
+    margin-left: -10px;
+    margin-top: -10px;
+  }

@@ -1,0 +1,42 @@
+.lst-nav {
+    padding: 0 10px ;
+    list-style: none ;
+    height: 100%;
+}
+.lst-nav li {
+        padding-right: 25px;
+        display: inline-block;
+        height: 100%;
+        line-height: 40px;
+        color: #8c8d90;
+}
+.lst-nav li a {
+    color : currentColor ; 
+    display: block;
+    font-weight: 600 ;
+    font-size: 14px;
+    line-height: 60px;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+}
+.lst-nav li a:hover{
+    color: #2a41e8 ;
+}
+
+
+.activeNav {
+    position: relative;
+    color: #2a41e8 !important ;
+}
+  
+.activeNav::after {
+    content : "";
+    position: absolute;
+    left    : -4px;
+    bottom  : 0;
+    height  : 0px;
+    width   : 80%;
+    border-bottom: 3px solid #2a41e8;
+}
