@@ -29,7 +29,7 @@ const Image = () => {
       image: "https://static.vexere.com/production/images/1640228197573.jpeg"
     },
     {
-      image: "https://static.vexere.com/production/images/1640228202337.jpeg"
+      image: "https://static.vexere.com/production/images/1640228202237.jpeg"
     }
   ];
 

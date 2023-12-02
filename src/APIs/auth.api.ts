@@ -2,8 +2,8 @@ import AxiosClient from './api'
 import END_POINT from './constants'
 import axios from "axios";
 import { setLocalStorage, STORAGE } from '@utils'
+import BASE_API_URL from './config';
 
-const BASE_API_URL = process.env.BASE_API_URL
 
 function login(Data: any) {
 	return AxiosClient.post(END_POINT.LOGIN, Data)

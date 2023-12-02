@@ -6,9 +6,9 @@ import JSONBig from 'json-bigint'
 
 import { isEmpty, assign } from 'lodash'
 import { STORAGE, getLocalStorage } from '@utils'
+import BASE_API_URL from './config'
 
 const singletonEnforcer = Symbol()
-const BASE_API_URL = process.env.BASE_API_URL
 class AxiosClient {
   axiosClient: any;
   static axiosClientInstance: AxiosClient

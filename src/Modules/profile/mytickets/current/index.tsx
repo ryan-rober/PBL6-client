@@ -63,9 +63,9 @@ const Current = () => {
      ApiRefund(id)
    }
 
-   const [dataSort, setDataSort] = useState<any>();
+   const [dataSort, setDataSort] = useState([]);
    useEffect(() =>{
-      setDataSort(listHistory.reverse())
+      setDataSort(listHistory)
    },[listHistory])
 
    const [countDown, setCountDown] = useState(0);
@@ -197,7 +197,7 @@ const Current = () => {
         {listHistory.length ? 
         <>
         <div>
-         {dataSort.map((item : any, index :any) => (
+         {Array.isArray(dataSort) && dataSort.map((item : any, index :any) => (
           <div>
             {item.historyBooking.status === "Success" && new Date().valueOf() - Date.parse(item.historyBooking.dateStart) < 0 ?
              <>

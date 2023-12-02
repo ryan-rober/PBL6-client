@@ -5,8 +5,7 @@ import END_POINT from './constants'
 import { setLocalStorage } from '@utils'
 //@ts-ignore
 import { Linking } from "react-native";
-
-const BASE_API_URL = process.env.BASE_API_URL
+import BASE_API_URL  from "./config";
 
 const getListLocation = (setListLocation) => {
   axios({

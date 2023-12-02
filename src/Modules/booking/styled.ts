@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
    height: auto;
   .image{
-    height: auto;
+    height: 900px;
     width: 100%;
   }
   .container{

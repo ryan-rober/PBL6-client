@@ -41,17 +41,18 @@ const Cancel = () => {
       ApiHistoryBooking(setListHistory)
    },[setListHistory])
    
-   const [dataSort, setDataSort] = useState<any>();
+   const [dataSort, setDataSort] = useState<any>([]);
    useEffect(() =>{
-      setDataSort(listHistory.reverse())
+      setDataSort(listHistory)
    },[listHistory])
+
   return (
     <Wrapper>
       <div className="block">
         {listHistory.length ? 
         <>
         <div>
-         {dataSort.map((item : any, index :any) => (
+         {Array.isArray(dataSort) && dataSort.map((item : any, index :any) => (
           <div>
             {item.historyBooking.status === "Cancel" ?
              <>

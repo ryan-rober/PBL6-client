@@ -64,9 +64,9 @@ const Went = () => {
       ApiHistoryBooking(setListHistory)
    },[setListHistory])
    
-   const [dataSort, setDataSort] = useState<any>();
+   const [dataSort, setDataSort] = useState<any>([]);
    useEffect(() =>{
-      setDataSort(listHistory.reverse())
+      setDataSort(listHistory)
    },[listHistory])
    console.log(listHistory)
 
@@ -76,7 +76,7 @@ const Went = () => {
         {listHistory.length ? 
         <>
         <div>
-         {dataSort.map((item : any, index :any) => (
+         {Array.isArray(dataSort) && dataSort.map((item : any, index :any) => (
           <div>
             {new Date().valueOf() - Date.parse(item.historyBooking.dateStart) > 0 && item.historyBooking.status === "Success" ?
              <>

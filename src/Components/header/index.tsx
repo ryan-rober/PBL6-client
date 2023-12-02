@@ -23,7 +23,7 @@ const Wrapper = styled.header`
   align-items: center;
   border-bottom: 0 solid #f8f9fa;
   box-shadow: 0 1.6rem 3rem rgb(0 0 0 / 10%);
-  background-color: ${({ theme }) => theme.white};
+  background-color: #2474e5;//${({ theme }) => theme.white};
   backdrop-filter: blur(0.5rem);
   will-change: backdrop-filter;
   @media screen and (max-width: 1250px){
@@ -203,7 +203,7 @@ const Header:FC<Prop> = ({setIsShow}) => {
 											key={index}
 										>
                         <Link
-                          className="transition-all text-black"
+                          className="transition-all text-white"
                           to={item.path}
                         >
                           {item.name}
