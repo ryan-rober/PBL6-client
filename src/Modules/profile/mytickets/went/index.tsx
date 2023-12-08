@@ -59,7 +59,7 @@ const Went = () => {
       rating : rating
     })
   }
-
+  
    useEffect(() => {
       ApiHistoryBooking(setListHistory)
    },[setListHistory])
@@ -68,8 +68,10 @@ const Went = () => {
    useEffect(() =>{
       setDataSort(listHistory)
    },[listHistory])
-   console.log(listHistory)
-
+  //  console.log(listHistory)
+  // console.log(dataSort[1].historyBooking.payment.paymentMethods.status)
+  
+  
   return (
     <Wrapper>
       <div className="block">
