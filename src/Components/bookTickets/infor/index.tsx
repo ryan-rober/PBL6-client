@@ -89,12 +89,13 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
 
   const arr : any = [];
   Object.keys(item.routeStations).map(function(key){  
-      arr.push({[key]:item.routeStations[key]})  
+      // arr.push({[key]:item.routeStations[key]})  
+      arr.push(item.routeStations[key])  
       return arr;  
   });   
   const routeStation : any =[]
-  routeStation[0] =1;
-  routeStation[1] = arr.length 
+  routeStation[0] =arr[0][0];
+  routeStation[1] = arr[0][arr[0].length - 1] 
 
   const [inValidData, setInValidData] = useState({
     errUsername: "",

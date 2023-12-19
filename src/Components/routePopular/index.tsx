@@ -52,6 +52,7 @@ const RoutePopular = () => {
   	const [endpoint, setEndPoint] = useState<any>('');
 
 	
+	
   return (
     <Wrapper className='w-3/5 m-auto mt-10'>
       <div>
@@ -68,8 +69,7 @@ const RoutePopular = () => {
 							href="./booking"
 							className="w-full h-36 overflow-hidden rounded-t-lg relative block"
 							onClick={() => {
-								// setLocalStorage(STORAGE.startpoint, JSON.parse(item.startpoint));
-								// setLocalStorage(STORAGE.endpoint, JSON.parse(item.endpoint));
+								
 								setLocalStorage(STORAGE.startpoint, item.startpoint);
 								setLocalStorage(STORAGE.endpoint, item.endpoint);
 							}}
