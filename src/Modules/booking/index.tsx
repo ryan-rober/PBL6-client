@@ -40,8 +40,8 @@ const BookingScreen = () => {
 
    useEffect(() => {
       getListLocation(setListLocation);
-      setStartPoint(JSON.parse(getLocalStorage(STORAGE.startpoint) || '{}'))
-      setEndPoint(JSON.parse(getLocalStorage(STORAGE.endpoint) || '{}'))
+      setStartPoint(JSON.parse(getLocalStorage(STORAGE.startpoint) || '{"label":"Đà Nẵng","value":1}'))
+      setEndPoint(JSON.parse(getLocalStorage(STORAGE.endpoint) || '{"label":"Bình Định","value":4}'))
       const my_date = new Date(JSON.stringify(getLocalStorage(STORAGE.date)).slice(3,13));
       setDate(my_date);
     }, []);

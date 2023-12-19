@@ -4,6 +4,9 @@ import SwipeSliders from "@components/SwipeSliders";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { item } from "./item";
+import { setLocalStorage,STORAGE } from '@utils'
+import { useState, useEffect } from 'react';
+
 const responsiveGroup = [
 	{
 		breakpoint: 1024,
@@ -43,6 +46,12 @@ const Wrapper = styled.header`
 `
 const RoutePopular = () => {
 
+	
+
+	const [startpoint, setStartPoint] = useState<any>('');
+  	const [endpoint, setEndPoint] = useState<any>('');
+
+	
   return (
     <Wrapper className='w-3/5 m-auto mt-10'>
       <div>
@@ -56,8 +65,14 @@ const RoutePopular = () => {
 				<div className="m-2 shadow-md rounded-lg dark:bg-slate-800 wid" key={index}>
 					<div className="w-full rounded-lg shadow-sm " >
 						<a
-							href="#"
+							href="./booking"
 							className="w-full h-36 overflow-hidden rounded-t-lg relative block"
+							onClick={() => {
+								// setLocalStorage(STORAGE.startpoint, JSON.parse(item.startpoint));
+								// setLocalStorage(STORAGE.endpoint, JSON.parse(item.endpoint));
+								setLocalStorage(STORAGE.startpoint, item.startpoint);
+								setLocalStorage(STORAGE.endpoint, item.endpoint);
+							}}
 						>
 							<img
 								src={item.url}

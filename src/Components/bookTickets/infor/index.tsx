@@ -212,6 +212,8 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
     }
   };
 
+  
+
   return (
     <Wrapper>
       <div className="my-[1rem] ml-[-2rem] block ">
@@ -252,7 +254,7 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
               )}
         </div>
         <div className='mt-4'>
-           <p className='font-bold'>Email để nhận thông tin vé* <span className='text-red-600'>*</span></p>
+           <p className='font-bold'>Email để nhận thông tin vé <span className='text-red-600'>*</span></p>
            <input type="text" className='mt-[-15px]' placeholder="example@gmail.com" 
                 value={dataBookSeat.email}
                 onChange={(e : any) => {

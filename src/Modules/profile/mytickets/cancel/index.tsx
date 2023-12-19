@@ -54,7 +54,7 @@ const Cancel = () => {
         <div>
          {Array.isArray(dataSort) && dataSort.map((item : any, index :any) => (
           <div>
-            {item.historyBooking.status === "Cancel" ?
+            {item.historyBooking.status === "Cancel" || item.historyBooking.status === "Refund" ?
              <>
                <div className='item flex '>
                 <div className='w-[60%] ml-4'>
@@ -105,6 +105,10 @@ const Cancel = () => {
                     <div className='flex mt-[-5px]'>
                       <p className='w-[120px]'>Tổng tiền : </p>
                       <p className='font-bold '>{formatCurrency(item.historyBooking.totalPrice)}VND</p>
+                    </div>
+                    <div className='flex mt-[-5px]'>
+                      <p className='w-[120px]'>Trạng thái : </p>
+                      <p className='font-bold '>{item.historyBooking.status === 'Cancel' ? 'Đã hủy' : 'Hoàn tiền'}</p>
                     </div>
                 </div>
               </div>

@@ -7,8 +7,8 @@ const END_POINT: any = {
   PROFILE_USER: '/api/profile/info',
   UPDATE_PROFILE : '/api/profile/update',
   //route 
-  BOOKSEAT : '/api/book/book-seat',
-  BOOKPARTSEAT: '/api/book/book-part-seat',
+  BOOKSEAT : '/api/booking/book-seat',
+  BOOKPARTSEAT: '/api/booking/book-part-seat',
   PAYMENT : '/api/payment',
   HISTORY :'/api/get-history-by-user',
   REFUND : '/api/refund',
