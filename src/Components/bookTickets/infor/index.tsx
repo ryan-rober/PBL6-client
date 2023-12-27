@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import {useState,useEffect} from 'react'
-import { ApiBookingSeat,ApiBookingPartSeat } from "@apis";
+import { ApiBookingSeat,ApiBookingPartSeat, getProfile } from "@apis";
 import { formatCurrency } from "@utils";
 const Wrapper = styled.div`
   .title{
@@ -66,6 +66,22 @@ const Wrapper = styled.div`
 
 const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , count, idSeat, setDataInforBook}:any) => {
 
+  const [data, setData] = useState<any>([]);
+
+  useEffect(() => {
+    getProfile(setData);
+    setDataBookSeat({
+      ...dataBookSeat,
+      phonenumber: data.phone + '',
+      username: data.name,
+      email: data.email,
+    }
+    );
+  }, [data, dataBookSeat, setDataBookSeat])
+
+  
+  
+
   const handleClickUp = () => {
     const newList = list.map((_item: any) => {
       if (_item.id === '3') {
@@ -90,7 +106,7 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
   const arr : any = [];
   Object.keys(item.routeStations).map(function(key){  
       // arr.push({[key]:item.routeStations[key]})  
-      arr.push(item.routeStations[key])  
+      arr.push(...item.routeStations[key]);  
       return arr;  
   });   
   const routeStation : any =[]
@@ -223,6 +239,8 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
            <p className='font-bold'>Họ tên <span className='text-red-600'>*</span></p>
            <input type="text" className='mt-[-15px]' placeholder="Nguyen Van A" 
                 value={dataBookSeat.username}
+                // defaultValue={data.name}
+
                 onChange={(e : any) => {
                   setDataBookSeat({
                     ...dataBookSeat,
@@ -240,6 +258,8 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
            <p className='font-bold'>Số điện thoại <span className='text-red-600'>*</span></p>
            <input type="text" className='mt-[-15px]' placeholder="+84 865 ### ###" 
                 value={dataBookSeat.phonenumber.replace(/\D/,'')}
+                // defaultValue={data.phone}
+
                 maxLength={11}
                 onChange={(e : any) => {
                   setDataBookSeat({
@@ -258,6 +278,8 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
            <p className='font-bold'>Email để nhận thông tin vé <span className='text-red-600'>*</span></p>
            <input type="text" className='mt-[-15px]' placeholder="example@gmail.com" 
                 value={dataBookSeat.email}
+                // defaultValue={data.email}
+
                 onChange={(e : any) => {
                   setDataBookSeat({
                     ...dataBookSeat,

@@ -93,6 +93,7 @@ const Pay = ({list ,setList, item, ArrSeat, dataBookSeat, count , startpoint, en
       setValid(false)
      }
   },[select])
+  
 
   return (
     <Wrapper>

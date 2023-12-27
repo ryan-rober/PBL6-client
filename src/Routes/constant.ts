@@ -8,6 +8,9 @@ import LienheScreen from '@modules/lienhe'
 import DanhgiaScreen from '@modules/danhgia'
 import BookingScreen from '@modules/booking'
 import ProfileScreen from '@modules/profile'
+import PaymentSuccessScreen from '@modules/payment/success'
+import PaymentCancelScreen from '@modules/payment/cancel'
+
 
 const RoutesName = {
   HOME: '/',
@@ -17,6 +20,9 @@ const RoutesName = {
   DANHGIA : '/danhgia',
   BOOKING : '/booking',
   PROFILE : '/profile',
+  PAYMENTSUCCESS: '/thanhtoanthanhcong',
+  PAYMENTCANCEL: '/huythanhtoan',
+
 }
 
 export const ROUTES = [
@@ -66,6 +72,20 @@ export const ROUTES = [
   {
     path: RoutesName.PROFILE,
     component: ProfileScreen,
+    layout: HomeLayout,
+    rules: [USER_ROLE.ADMIN],
+    exact: true,
+  },
+  {
+    path: RoutesName.PAYMENTSUCCESS,
+    component: PaymentSuccessScreen,
+    layout: HomeLayout,
+    rules: [USER_ROLE.ADMIN],
+    exact: true,
+  },
+  {
+    path: RoutesName.PAYMENTCANCEL,
+    component: PaymentCancelScreen,
     layout: HomeLayout,
     rules: [USER_ROLE.ADMIN],
     exact: true,
