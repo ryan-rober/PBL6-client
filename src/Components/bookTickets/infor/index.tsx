@@ -66,22 +66,6 @@ const Wrapper = styled.div`
 
 const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , count, idSeat, setDataInforBook}:any) => {
 
-  const [data, setData] = useState<any>([]);
-
-  useEffect(() => {
-    getProfile(setData);
-    setDataBookSeat({
-      ...dataBookSeat,
-      phonenumber: data.phone + '',
-      username: data.name,
-      email: data.email,
-    }
-    );
-  }, [data, dataBookSeat, setDataBookSeat])
-
-  
-  
-
   const handleClickUp = () => {
     const newList = list.map((_item: any) => {
       if (_item.id === '3') {
