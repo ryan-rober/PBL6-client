@@ -109,9 +109,9 @@ const Infor = ({list ,setList, dataBookSeat,setDataBookSeat , item, ArrSeat , co
       arr.push(...item.routeStations[key]);  
       return arr;  
   });   
-  const routeStation : any =[]
-  routeStation[0] =arr[0][0];
-  routeStation[1] = arr[0][arr[0].length - 1] 
+  const routeStation: any = [];
+  routeStation[0] = arr[0];
+  routeStation[1] = arr[arr.length - 1];
 
   const [inValidData, setInValidData] = useState({
     errUsername: "",
