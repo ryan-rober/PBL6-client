@@ -48,7 +48,7 @@ function ApiBookingSeat(Data: any, setData) {
           setData(listResponse);
          })
         .catch((err) => {
-          console.warn(err);
+          throw err;
         });
 }
 
@@ -59,7 +59,7 @@ function ApiBookingPartSeat(Data: any, setData) {
           setData(listResponse);
          })
         .catch((err) => {
-          console.warn(err);
+          throw err;
         });
 }
 
@@ -78,7 +78,9 @@ function ApiPayment(Data: any) {
 function ApiHistoryBooking(setListHistory) {
 	return AxiosClient.get(END_POINT.HISTORY)
          .then((res) => {
-          setListHistory(res.data.body)
+          if(res.data.body instanceof Array){
+            setListHistory(res.data.body)
+          }
           return res.data.body;
          })
         .catch((err) => {

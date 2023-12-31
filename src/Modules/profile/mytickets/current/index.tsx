@@ -58,7 +58,7 @@ const Current = () => {
    useEffect(() => {
       ApiHistoryBooking(setListHistory)
       getListNoPayment(setListnoPayment)
-   },[setListHistory, setListnoPayment])
+   },[])
 
    const CancelTicket = (id: any) => {
      ApiRefund(id)

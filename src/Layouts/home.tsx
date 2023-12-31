@@ -51,9 +51,9 @@ const HomeLayout = ({ children }: any) => {
           event={() => setIsShow(false)}
        />
       )}
-     {!isProfile &&(
+     {/* {!isProfile &&(
        <Footer />     
-     )}
+     )} */}
     </Wrapper>
   )
 }

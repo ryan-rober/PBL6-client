@@ -50,7 +50,7 @@ const ModalSignIn: FunctionComponent<ModalSignInProps> = ({event}) => {
           : <> <SignUp step={step} setStep ={setStep}/> </>}
           {step !== 'VERIFY_OTP' ? 
           <>
-              <p className='mt-2'>Bạn chưa có tài khoản ? 
+              <p className='mt-2'>Bạn {!isSignUp?"chưa":"đã"} có tài khoản ? 
               <a onClick={()=> setIsSignUp(!isSignUp)}>
               {!isSignUp ? 
                 <> Đăng ký</>

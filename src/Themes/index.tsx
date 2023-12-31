@@ -220,6 +220,6 @@ body {
 }
 
 .ant-dropdown{
-   left: 1157px !important;
+  top: 3.75rem !important;
 }
 `

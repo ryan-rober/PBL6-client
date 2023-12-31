@@ -28,7 +28,7 @@ function login(Data: any) {
 }
 
 function register (Data) {
-  axios({
+  return axios({
     method: "post",
     url: `${BASE_API_URL}/api/auth/signup`,
     data: Data,

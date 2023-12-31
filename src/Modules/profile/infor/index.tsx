@@ -98,6 +98,7 @@ const Wrapper = styled.div`
            <p >Họ và tên*</p>
            <input type="text" className='mt-[-15px]' 
              value={data.name}
+             readOnly
            />
             </div>
             <div className='mt-4'>
@@ -105,6 +106,7 @@ const Wrapper = styled.div`
               <input type="text" className='mt-[-15px]' 
                   maxLength={11} 
                   value={data.phone}
+                  readOnly
                 />
             </div>
             <div className='mt-4'>
@@ -112,30 +114,35 @@ const Wrapper = styled.div`
               <input type="text" className='mt-[-15px]'
                 defaultValue={data.email} 
                 value={data.email}
+                readOnly
               />
             </div>
             <div className='mt-4'>
               <p >Quốc gia</p>
               <input type="text" className='mt-[-15px]'
                 value={data.country}
+                readOnly
               />
             </div>
             <div className='mt-4'>
               <p >Thành phố</p>
               <input type="text" className='mt-[-15px]' 
                 value={data.city}
+                readOnly
               />
             </div>
             <div className='mt-4'>
               <p >Phường</p>
               <input type="text" className='mt-[-15px]' 
                 value={data.wards}
+                readOnly
               />
             </div>
             <div className='mt-4'>
               <p >Địa chỉ</p>
               <input type="text" className='mt-[-15px]' 
                 value={dataInfor.address}
+                readOnly
               />
             </div>
          </> 
@@ -157,7 +164,7 @@ const Wrapper = styled.div`
               <p >Số điện thoại</p>
               <input type="text" className='mt-[-15px]' 
                   maxLength={11} 
-                  value={dataInfor.phone.replace(/\D/,'')}
+                  value={dataInfor.phone?.replace(/\D/,'')}
                   onChange={(e : any) => {
                     setDataInfor({
                       ...dataInfor,
