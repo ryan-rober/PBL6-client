@@ -298,7 +298,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({step, setStep}) => {
     {step === 'INPUT_PHONE_NUMBER' &&
       <div>
            <h1 className='font-bold text-[15px] text-center'>Đăng ký</h1>
-            <div className=' mt-[-20px] '>
+            {/* <div className=' mt-[-20px] '>
                 <FormControl>
                   <RadioGroup
                     aria-labelledby="demo-controlled-radio-buttons-group"
@@ -313,7 +313,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({step, setStep}) => {
                     </div>
                   </RadioGroup>
                 </FormControl>
-            </div>   
+            </div>    */}
           {isPhone ? 
               <>
                 <div className='mt-[-5px]'>
