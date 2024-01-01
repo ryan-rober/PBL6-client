@@ -6,6 +6,7 @@ const END_POINT: any = {
   REGISTER : '/api/auth/register',
   PROFILE_USER: '/api/profile/info',
   UPDATE_PROFILE : '/api/profile/update',
+  CURRENT_PROFILE: '/api/auth/current',
   //route 
   BOOKSEAT : '/api/booking/book-seat',
   BOOKPARTSEAT: '/api/booking/book-part-seat',

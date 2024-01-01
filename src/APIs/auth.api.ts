@@ -3,6 +3,7 @@ import END_POINT from './constants'
 import axios from "axios";
 import { setLocalStorage, STORAGE } from '@utils'
 import BASE_API_URL from './config';
+import { USER_ROLE } from '@constants/auth';
 
 
 function login(Data: any) {
@@ -14,9 +15,7 @@ function login(Data: any) {
              alert("Your username or password are incorrect");
             }
              else {
-              setLocalStorage(STORAGE.USER_DATA, JSON.stringify(data));
-              setLocalStorage(STORAGE.USER_TOKEN, data.accessToken);
-              window.location.reload();
+              currentUser(data);
             }
           } catch (e) {
             console.warn(e);
@@ -75,6 +74,30 @@ function updateProfile(Data) {
         .catch((err) => {
           console.warn(err);
         });
+}
+
+function currentUser(Data) {
+  console.log(Data);
+  return AxiosClient.get(END_POINT.CURRENT_PROFILE,'',{headers: {
+    authorization: `${Data.accessToken}`,
+    "content-type": "application/json",
+  },})
+  .then((res) => res.data)
+  .then((data) => {
+    console.log(data);
+    if (
+      (data.authorities[0].authority === "ROLE_USER")
+    ) {
+      setLocalStorage(STORAGE.USER_DATA, JSON.stringify(data));
+      setLocalStorage(STORAGE.USER_TOKEN, Data.accessToken);
+      window.location.reload();
+    } else {
+      alert("Vui lòng kiểm tra quyền truy cập");
+    }
+  })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 
