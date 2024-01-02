@@ -232,7 +232,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({ step, setStep }) => {
 		register({
 			username: dataRegister.phoneNumber,
 			password: dataRegister.password,
-			role: "1",
+			role: "2",
 		}).then(() => {
 			if (getLocalStorage(STORAGE.USER_TOKEN)?.length) {
 				if (mynumber === "") return;
