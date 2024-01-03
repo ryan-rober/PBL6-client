@@ -86,7 +86,7 @@ function currentUser(Data) {
   .then((data) => {
     console.log(data);
     if (
-      (data.authorities[0].authority /*=== "ROLE_USER"*/)
+      (data.authorities[0].authority === "ROLE_USER")
     ) {
       setLocalStorage(STORAGE.USER_DATA, JSON.stringify(data));
       setLocalStorage(STORAGE.USER_TOKEN, Data.accessToken);

@@ -133,6 +133,7 @@ const Current = () => {
 				{listnoPayment.length ? (
 					<>
 						<div>
+				
 							{listnoPayment.map((item: any, index: any) => (
 								<div>
 									{ onTime(item.dateOrder, 15 * 60 * 1000)/*time(item.dateOrder.slice(0, 10))*/ ? (
