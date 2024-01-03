@@ -108,7 +108,7 @@ const Current = () => {
 			"-" +
 			(today.getMonth() + 1).toString().padStart(2, "0") +
 			"-" +
-			today.getDate().toString().padStart(2, "0") ;
+			today.getDate().toString().padStart(2, "0");
 		console.log(date);
 
 		if (date === currentDate) {
@@ -117,6 +117,13 @@ const Current = () => {
 			return false;
 		}
 	};
+
+	const onTime = (currentDate, threshhold) => {
+		const today = new Date();
+		const targetDate = new Date(currentDate)
+
+		return today.getTime() - targetDate.getTime() < threshhold;
+	}
 
 	//  const Seconds = String(countDown % 60);
 	//  const Minutes =  String(Math.floor(countDown / 60));
@@ -127,8 +134,8 @@ const Current = () => {
 					<>
 						<div>
 							{listnoPayment.map((item: any, index: any) => (
-								<div>
-									{time(item.dateOrder.slice(0, 10)) ? (
+								<div>(
+									{ onTime(item.dateOrder, 15 * 60 * 1000)/*time(item.dateOrder.slice(0, 10))*/ ? (
 										<>
 											<div className="item flex ">
 												<div className="w-[60%] ml-4">
@@ -214,7 +221,7 @@ const Current = () => {
 																		item
 																			.nameSeat
 																			.length -
-																			1
+																		1
 																	)}
 																</p>
 															</div>
@@ -289,11 +296,12 @@ const Current = () => {
 									<div>
 										{item.historyBooking.status ===
 											"Success" &&
-										new Date().valueOf() -
+											/*new Date().valueOf() -
 											Date.parse(
 												item.historyBooking.datOrder
 											).valueOf() <
-											24 * 60 * 60 * 1000 ? (
+											24 * 60 * 60 * 1000*/
+											onTime(item.historyBooking.daOrder, 24 * 60 * 60 * 1000) ? (
 											<>
 												<div className="item flex ">
 													<div className="w-[60%] ml-4">
@@ -417,7 +425,7 @@ const Current = () => {
 																				.historyBooking
 																				.nameSeat
 																				.length -
-																				1
+																			1
 																		)}
 																	</p>
 																</div>
@@ -446,7 +454,7 @@ const Current = () => {
 															).getDate() + 1
 														) -
 															new Date().valueOf() >
-														0 ? (
+															0 ? (
 															<>
 																{item
 																	.historyBooking
