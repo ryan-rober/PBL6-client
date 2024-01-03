@@ -134,7 +134,7 @@ const Current = () => {
 					<>
 						<div>
 							{listnoPayment.map((item: any, index: any) => (
-								<div>(
+								<div>
 									{ onTime(item.dateOrder, 15 * 60 * 1000)/*time(item.dateOrder.slice(0, 10))*/ ? (
 										<>
 											<div className="item flex ">
