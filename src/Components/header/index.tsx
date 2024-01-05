@@ -35,11 +35,12 @@ const Wrapper = styled.header`
 	.container {
 		padding: 0 0.75rem;
 		width: 100%;
+		display: flex;
 		.row {
 			display: flex;
 			align-items: center;
 			.header-left {
-				margin-right: 15rem;
+				margin-right: 16rem;
 				.search {
 					display: flex;
 					align-items: center;
@@ -233,7 +234,7 @@ const Header: FC<Prop> = ({ setIsShow }) => {
 		<Wrapper className="main">
 			<div className="container">
 				<div className="flex justify-between items-center">
-					<div className="header-left">
+					<div className="header-left mr-60">
 						<img src={LOGO_ICON} className="h-16 mb-2" alt="" />
 					</div>
 					<div className="header-right">

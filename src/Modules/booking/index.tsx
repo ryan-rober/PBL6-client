@@ -141,18 +141,14 @@ const BookingScreen = () => {
 	}, [dataSort, data, clicksortprice, clicksorttime]);
 
 	const onClickInfor = (id: any) => {
-		if (isClickInfor === "") {
-			setIsClickInfor(id);
-		}
 		if (isClickInfor === id) {
 			setIsClickInfor("");
+		}else{
+			setIsClickInfor(id);
 		}
 	};
 
 	const onClickBook = (id: any) => {
-		if (isClickBook === "") {
-			setIsClickBook(id);
-		}
 		if (isClickBook === id) {
 			setIsClickBook("");
 			setArrSeat([]);
@@ -165,6 +161,8 @@ const BookingScreen = () => {
 				seatIds: "",
 				tripId: "",
 			});
+		}else{
+			setIsClickBook(id);
 		}
 	};
 
@@ -337,6 +335,9 @@ const BookingScreen = () => {
 									</p>
 								</div>
 								<div className="w-1/5 block mr-14">
+									<p className="font-bold text-[18px] mb-0 uppercase">
+										{item?.nameAgency}
+									</p>
 									<p className="font-bold text-[17px] mb-0">
 										{item.nameVehicle}
 									</p>
