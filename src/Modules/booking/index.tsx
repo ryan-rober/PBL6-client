@@ -337,6 +337,9 @@ const BookingScreen = () => {
 									</p>
 								</div>
 								<div className="w-1/5 block mr-14">
+									<p className="font-bold text-[18px] mb-0 uppercase">
+										{item?.nameAgency}
+									</p>
 									<p className="font-bold text-[17px] mb-0">
 										{item.nameVehicle}
 									</p>

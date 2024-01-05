@@ -18,7 +18,7 @@ interface Prop{
  const Evaluate:FC<Prop> = ({item}) => {
    const [listRating, setListRating] = useState([]);
    useEffect(() => {
-      getListRatingByAgency(item.nameAgency, setListRating )
+      getListRatingByAgency(item.userName, setListRating )
    },[])
   return (
     <Wrapper>
