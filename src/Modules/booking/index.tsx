@@ -141,18 +141,14 @@ const BookingScreen = () => {
 	}, [dataSort, data, clicksortprice, clicksorttime]);
 
 	const onClickInfor = (id: any) => {
-		if (isClickInfor === "") {
-			setIsClickInfor(id);
-		}
 		if (isClickInfor === id) {
 			setIsClickInfor("");
+		}else{
+			setIsClickInfor(id);
 		}
 	};
 
 	const onClickBook = (id: any) => {
-		if (isClickBook === "") {
-			setIsClickBook(id);
-		}
 		if (isClickBook === id) {
 			setIsClickBook("");
 			setArrSeat([]);
@@ -165,6 +161,8 @@ const BookingScreen = () => {
 				seatIds: "",
 				tripId: "",
 			});
+		}else{
+			setIsClickBook(id);
 		}
 	};
 
